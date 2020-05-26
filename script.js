@@ -101,4 +101,29 @@ blueBtn.addEventListener("click", directRotateCard);
 //Fonctionnalité 9
 var Logo = document.getElementsByTagName("a")[3];
 var Page = document.getElementsByTagName("body")[0];
-console.log(Logo);
+
+var changeLayout = function(key){
+    var keyPressed = (key.key);
+    console.log(keyPressed);
+    switch(keyPressed){
+        case "a":
+            Page.removeAttribute("class");
+            Page.classList.add("col-4");
+            break;
+        case "y":
+            Page.removeAttribute("class");
+            Page.classList.add("offset-md-4");
+            Page.classList.add("col-4");
+            break;
+        case "p":
+            Page.removeAttribute("class");
+            Page.classList.add("offset-md-8");
+            Page.classList.add("col-4");
+            break;
+        case "b":
+            Page.removeAttribute("class");
+            break;
+    }
+}
+
+Logo.addEventListener("keypress", changeLayout);
